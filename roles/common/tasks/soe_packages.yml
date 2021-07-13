@@ -1,0 +1,11 @@
+---
+- name: SOE packages that must be installed
+  apt:
+    name: "{{ packages_present }}"
+    state: present
+    update_cache: yes
+
+- name: Packages that must not be installed on the SOE
+  apt:
+    name: "{{ packages_absent }}"
+    state: absent

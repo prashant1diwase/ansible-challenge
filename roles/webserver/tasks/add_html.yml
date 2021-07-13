@@ -1,0 +1,24 @@
+---
+# Set fact based on hostname
+- name: Get all EC2 Instances for html_pages servers
+  delegate_to: localhost
+  become: no
+  ec2_instance_info:
+    filters:
+      "tag:Name": WebserverGroup
+    region: "{{ region }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+  register: ec2_facts
+
+# Get file download file
+- name: download and install html_pages
+  get_url:
+    url: "{{ html_pages[item.tags.Name] }}"
+    dest: "{{ docroot }}/index.html"
+    force: yes
+    mode: 0644
+    owner: root
+    group: root
+  when: item.public_dns_name == inventory_hostname
+  with_items: "{{ ec2_facts.instances }}"

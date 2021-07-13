@@ -1,0 +1,16 @@
+---
+- name: Facts
+  block:
+  - name: Get instances facts
+    ec2_instance_info:
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      region: "{{ region }}"
+    register: result
+
+  - name: Instances ID
+    debug:
+      msg: "ID: {{ item.instance_id }} - State: {{ item.state.name }} - Public DNS: {{ item.public_dns_name }}"
+    loop: "{{ result.instances }}"
+
+  tags: always

@@ -1,0 +1,21 @@
+---
+# handlers file for webserver
+- name: "Restart httpd"
+  service:
+      name: "httpd"
+      state: restarted
+
+- name: "Restart apache2"
+  service:
+      name: "apache2"
+      state: restarted
+
+- name: "Reload Apache"
+  service:
+      name: "apache2"
+      state: reloaded
+
+- name: "Restart Firewall"
+  service:
+      name: "firewalld"
+      state: restarted

@@ -1,0 +1,10 @@
+---
+# vars file for awsec2
+
+image: ami-0f93b5fd8f220e428 # https://cloud-images.ubuntu.com/locator/ec2/
+#image: ami-0ba62214afa52bec7
+id: "web-app18"
+sec_group: "{{ id }}-sec"
+instance_type: t2.micro
+instance_count: 1
+inventory_dir: ../inventory/aws_ec2.yml

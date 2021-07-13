@@ -1,0 +1,5 @@
+---
+# tasks file for awsec2
+
+- include: instance_facts.yml
+- include: provisioning_ec2_instances.yml

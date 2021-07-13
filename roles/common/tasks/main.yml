@@ -1,0 +1,6 @@
+---
+# tasks file for common
+- include: soe_packages.yml
+- include: timezone.yml
+- include: chronyd.yml
+- include: ssh.yml

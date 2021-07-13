@@ -1,0 +1,12 @@
+---
+- name: Install httpd packages ans openssl packages
+  apt:
+    name: ['apache2', 'openssl']
+    state: present
+    update_cache: yes
+
+- name: Enable and Start httpd
+  service:
+    name: apache2
+    enabled: yes
+    state: started

@@ -1,0 +1,5 @@
+---
+# tasks file for webserver
+- include: install_httpd.yml
+- include: configure_httpd.yml
+- include: add_html.yml
