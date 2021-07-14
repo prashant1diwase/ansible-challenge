@@ -59,10 +59,10 @@ git clone git@github.com:prashant1diwase/ansible-challenge.git
 # Configure password vault
 
 - Create vault file by running command as mentioned below 
-- -    echo "myvaultfile" > ~/<vault_file_name>.vault
+  -    echo "myvaultfile" > ~/<vault_file_name>.vault
 - Replace your aws_access_key, aws_secret_key retried from AWS account pre-requisite
-- -    ansible-vault encrypt_string --vault-password-file  ~/<vault_file_name>.vault '<your_aws_access_key>' --name 'aws_access_key'
-- -    ansible-vault encrypt_string --vault-password-file  ~/<vault_file_name>.vault '<your_aws_secret_key>' --name 'aws_secret_key'
+  -    ansible-vault encrypt_string --vault-password-file  ~/<vault_file_name>.vault '<your_aws_access_key>' --name 'aws_access_key'
+  -    ansible-vault encrypt_string --vault-password-file  ~/<vault_file_name>.vault '<your_aws_secret_key>' --name 'aws_secret_key'
 
 For eg.,
 ```
@@ -77,12 +77,12 @@ $  ansible-vault encrypt_string --vault-password-file  ~/techchallenge.vault 'SN
 Add access_key and secret key by using output captured in above step at given locations. 
 
 - Edit file group_vars/all.yml to add variables:
-- -   aws_access_key
-- -   aws_secret_key
+  -   aws_access_key
+  -   aws_secret_key
 
 - Edit file inventory/aws_ec2.yml to add variables:
-- -   aws_access_key
-- -   aws_secret_key
+  -   aws_access_key
+  -   aws_secret_key
 
 ## Usage
 
