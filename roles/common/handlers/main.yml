@@ -1,13 +1,13 @@
 ---
 # handlers file for common
-- name: Restart chronyd
+- name: Restart chrony
   service:
-    name: chronyd
+    name: chrony
     state: restarted
 
 - name: Enable and start chrony
   service:
-    name: chronyd
+    name: chrony
     enabled: yes
     state: started
 

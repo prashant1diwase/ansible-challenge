@@ -13,8 +13,8 @@
 - name: Install chrony.conf template
   template:
     src: chrony.conf.j2
-    dest: /etc/chrony.conf
+    dest: /etc/chrony/chrony.conf
     owner: root
     group: root
     mode: 0644
-  notify: Restart chronyd
+  notify: Restart chrony

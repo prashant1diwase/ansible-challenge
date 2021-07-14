@@ -1,5 +1,6 @@
 ---
 pool_servers: [ 
+  pool ntp.ubuntu.com        iburst
   pool 0.ubuntu.pool.ntp.org iburst
   pool 1.ubuntu.pool.ntp.org iburst
   pool 2.ubuntu.pool.ntp.org iburst

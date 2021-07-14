@@ -7,7 +7,7 @@ csr: "{{ cert_path }}/apache-selfsigned.csr"
 cert: "{{ cert_path }}/apache-selfsigned.crt"
 dhparam: "{{ cert_path }}/dhparam.pem"
 config_path: /etc/apache2/
-ssl_config: "{{ config_path }}/ssl.conf"
+ssl_config: "{{ config_path }}/conf-available/ssl.conf"
 non_ssl_config: "{{ config_path }}/non-ssl.conf"
 httpd_config: /etc/apache2/apache2.conf
-docroot: /var/www/ssl
+docroot: /var/www/html

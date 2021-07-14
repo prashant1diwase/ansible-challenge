@@ -42,6 +42,8 @@
         - proto: tcp
           ports:
             - 22
+            - 80
+            - 443
           cidr_ip: 0.0.0.0/0
           rule_desc: allow all on ssh port
     register: result_sec_group
@@ -58,14 +60,14 @@
       region: "{{ region }}"
       wait: true
       #count: 1
-      exact_count: 1 
+      exact_count: 1
       count_tag:
         Name: App
       instance_tags:
         Name: "{{ item.key }}"
         html: html_pages
     when: item.key not in server_exist
-    loop: "{{ html_pages|dict2items }}"
+    with_dict: "{{ html_pages }}"
     notify: Sleep
 
 - name: Refresh inventory
