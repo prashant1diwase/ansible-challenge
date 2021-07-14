@@ -5,14 +5,15 @@
   become: no
   ec2_instance_info:
     filters:
-      "tag:html": html_pages
+      "tag:html": html_file
+      instance-state-name : running
     region: "{{ region }}"
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
   register: ec2_facts
 
 # Get file download file
-- name: download and install html_pages
+- name: Download and install html_pages
   get_url:
     url: "{{ html_pages[item.tags.Name] }}"
     dest: "{{ docroot }}"

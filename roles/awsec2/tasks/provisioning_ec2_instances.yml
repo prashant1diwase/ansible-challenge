@@ -48,26 +48,31 @@
           rule_desc: allow all on ssh port
     register: result_sec_group
 
+  - name: List html pages
+    debug:
+      msg: "html_file_name: {{ item.key }} - url: {{ item.value }}"
+    loop: "{{ lookup('dict', html_pages) }}"
+
   - name: Provision instance(s)
     ec2:
       aws_access_key: "{{ aws_access_key }}"
       aws_secret_key: "{{ aws_secret_key }}"
       key_name: "{{ key_name }}"
-      id: "{{ id }}"
+      #id: "{{ id }}"
       group_id: "{{ result_sec_group.group_id }}"
       image: "{{ image }}"
       instance_type: "{{ instance_type }}"
       region: "{{ region }}"
       wait: true
       #count: 1
-      exact_count: 1
+      exact_count: "{{ instance_count }}"
       count_tag:
         Name: App
       instance_tags:
         Name: "{{ item.key }}"
-        html: html_pages
+        html: html_file      
     when: item.key not in server_exist
-    with_dict: "{{ html_pages }}"
+    loop: "{{ lookup('dict', html_pages) }}"
     notify: Sleep
 
 - name: Refresh inventory

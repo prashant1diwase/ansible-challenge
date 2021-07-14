@@ -1,7 +1,7 @@
 ---
 html_pages:
-  bits-rain: https://github.com/Metroxe/one-html-page-challenge/blob/master/entries/bits-rain.html
-  car-game: https://github.com/Metroxe/one-html-page-challenge/blob/master/entries/mini_car_game.html
+  bits-rain: https://raw.githubusercontent.com/Metroxe/one-html-page-challenge/master/entries/bits-rain.html
+  car-game: https://raw.githubusercontent.com/Metroxe/one-html-page-challenge/master/entries/mini_car_game.html
 
 ec2_key_directory: ~/.ssh/
 key_name: my_aws

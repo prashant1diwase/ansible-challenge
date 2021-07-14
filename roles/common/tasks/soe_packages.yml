@@ -1,5 +1,5 @@
 ---
-- name: SOE packages that must be installed
+- name: Linux SOE packages that must be installed
   apt:
     name: "{{ packages_present }}"
     state: present

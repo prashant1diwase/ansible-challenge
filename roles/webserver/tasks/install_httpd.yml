@@ -1,5 +1,5 @@
 ---
-- name: Install httpd packages ans openssl packages
+- name: Install httpd packages and openssl packages
   apt:
     name: ['apache2', 'openssl']
     state: present

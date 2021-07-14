@@ -5,7 +5,7 @@
   roles:
   - role: awsec2
 
-- hosts: tag_html_html_pages
+- hosts: tag_html_html_file
   gather_facts: False
   remote_user: ubuntu
   become: yes

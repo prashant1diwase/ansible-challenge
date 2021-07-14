@@ -1,5 +1,5 @@
 ---
-- name: Install openssh just in case its missing, which it won't
+- name: Install openssh
   apt:
     name: openssh-server
     state: present
