@@ -92,8 +92,8 @@ ansible-lint site.yml
 ansible-galaxy collection install -r collections/requirements.yml
 ansible-playbook -i inventory/aws_ec2.yml site.yml --vault-password-file ~/accesskeyvaultfile.vault
 ```
-- You can access the html pages by appending html file name (given in html_pages dictionary) to public dns of AWS VM.
+- You can access the html pages by appending /index.html to public dns of AWS VM.
   For eg.,
-  http://ec2-18-118-140-163.us-east-2.compute.amazonaws.com/mini_car_game.html
+  http://ec2-18-118-140-163.us-east-2.compute.amazonaws.com/index.html
 
 Let me know if you have any questions on this solution.

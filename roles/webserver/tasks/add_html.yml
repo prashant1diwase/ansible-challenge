@@ -16,7 +16,7 @@
 - name: Download and install html_pages
   get_url:
     url: "{{ html_pages[item.tags.Name] }}"
-    dest: "{{ docroot }}"
+    dest: "{{ docroot }}/index.html"
     force: yes
     mode: 0644
     owner: root
